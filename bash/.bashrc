@@ -1,0 +1,6 @@
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias mygofmt='gofmt -tabs=false -tabwidth=4 -w'
+alias startgodoc='godoc -http=:6060'
+alias searchgodoc='godoc -server=localhost:6060'
