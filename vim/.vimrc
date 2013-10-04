@@ -11,3 +11,7 @@ set wildmenu
 
 au BufNewFile,BufRead *.gradle set filetype=groovy
 
+set rtp+=$SCALA_PLUGIN/vim
+set rtp+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
