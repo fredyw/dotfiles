@@ -8,6 +8,10 @@ set number
 set ignorecase
 set hlsearch
 set wildmenu
+set completeopt=longest,preview,menuone
+
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-Space>
 
 au BufNewFile,BufRead *.gradle set filetype=groovy
 
