@@ -14,6 +14,8 @@ inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-Space>
 
 au BufNewFile,BufRead *.gradle set filetype=groovy
+au BufNewFile,BufRead *.go set filetype=go
+au BufNewFile,BufRead *.scala set filetype=scala
 
 set rtp+=$SCALA_PLUGIN/vim
 set rtp+=$GOROOT/misc/vim
