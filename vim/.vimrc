@@ -15,12 +15,18 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set softtabstop=4
+set smarttab
 set ruler
 set nobackup
 set number
 set ignorecase
+set smartcase
 set hlsearch
 set wildmenu
+set mouse=a
+set incsearch
+set showcmd
+set autoindent
 set completeopt=longest,preview,menuone
 
 au BufNewFile,BufRead *.gradle set filetype=groovy
