@@ -30,5 +30,7 @@ set showcmd
 set autoindent
 set completeopt=longest,preview,menuone
 
+au BufNewFile,BufRead *.gradle set filetype=groovy
+
 call vundle#end() 
 filetype plugin indent on
