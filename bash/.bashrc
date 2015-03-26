@@ -31,3 +31,6 @@ alias setjava7="export JAVA_HOME=$JAVA7_HOME; export PATH=$JAVA7_HOME/bin:$PATH"
 alias setjava8="export JAVA_HOME=$JAVA8_HOME; export PATH=$JAVA8_HOME/bin:$PATH"
 alias cddata="cd $HOME/data"
 alias cdgit="cd $HOME/data/git"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
