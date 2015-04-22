@@ -24,6 +24,7 @@ export PATH=$HOME/data/bin:$JAVA_HOME/bin:$ECLIPSE_HOME:$SCALAIDE_HOME:$ADT_HOME
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
+alias gitk="gitk --tags"
 alias startgodoc="godoc -http=:6060"
 alias searchgodoc="godoc -server=localhost:6060"
 alias setjava6="export JAVA_HOME=$JAVA6_HOME; export PATH=$JAVA6_HOME/bin:$PATH"
