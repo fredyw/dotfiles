@@ -1,4 +1,4 @@
-JAVA8_HOME=$HOME/data/jdk1.8.0_40
+JAVA8_HOME=$HOME/data/jdk1.8.0_45
 JAVA7_HOME=$HOME/data/jdk1.7.0_55
 JAVA6_HOME=$HOME/data/jdk1.6.0_45
 
