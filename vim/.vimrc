@@ -28,6 +28,7 @@ set mouse=a
 set incsearch
 set showcmd
 set autoindent
+set cursorline
 set completeopt=longest,preview,menuone
 
 au BufNewFile,BufRead *.gradle set filetype=groovy
