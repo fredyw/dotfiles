@@ -30,6 +30,7 @@ set showcmd
 set autoindent
 set cursorline
 set completeopt=longest,preview,menuone
+set guifont=Consolas\ 12
 
 au BufNewFile,BufRead *.gradle set filetype=groovy
 
