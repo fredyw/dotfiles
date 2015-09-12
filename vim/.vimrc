@@ -24,13 +24,13 @@ set ignorecase
 set smartcase
 set hlsearch
 set wildmenu
-set mouse=a
 set incsearch
 set showcmd
 set autoindent
 set cursorline
 set completeopt=longest,preview,menuone
 set guifont=Consolas\ 12
+" set mouse=a
 
 au BufNewFile,BufRead *.gradle set filetype=groovy
 
