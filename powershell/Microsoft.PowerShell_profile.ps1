@@ -17,3 +17,7 @@ function global:prompt {
 }
 
 Pop-Location
+
+function run {
+    Start-Process -Wait -NoNewWindow $args[0] $args[1..($args.Length-1)]
+}
