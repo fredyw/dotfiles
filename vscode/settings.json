@@ -15,5 +15,6 @@
     "editor.rulers": [80],
     "files.associations": {
         "*.m": "matlab"
-    }
+    },
+    "window.openFilesInNewWindow": false
 }
