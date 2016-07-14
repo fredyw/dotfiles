@@ -1,5 +1,10 @@
 // Place your settings in this file to overwrite the default settings
 {
+    "editor.rulers": [80],
+    "window.openFilesInNewWindow": false,
+    "files.associations": {
+        "*.m": "matlab"
+    },
     "go.buildOnSave": true,
     "go.lintOnSave": true,
     "go.vetOnSave": true,
@@ -11,10 +16,5 @@
     "go.useCodeSnippetsOnFunctionSuggest": false,
     "go.formatOnSave": true,
     "go.formatTool": "goreturns",
-    "go.gocodeAutoBuild": false,
-    "editor.rulers": [80],
-    "files.associations": {
-        "*.m": "matlab"
-    },
-    "window.openFilesInNewWindow": false
+    "go.gocodeAutoBuild": false
 }
