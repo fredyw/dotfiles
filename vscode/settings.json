@@ -17,5 +17,11 @@
     "go.useCodeSnippetsOnFunctionSuggest": false,
     "go.formatOnSave": true,
     "go.formatTool": "goreturns",
-    "go.gocodeAutoBuild": false
+    "go.gocodeAutoBuild": false,
+    "[cpp]": {
+        "editor.quickSuggestions": false
+    },
+    "[c]": {
+        "editor.quickSuggestions": false
+    }
 }
