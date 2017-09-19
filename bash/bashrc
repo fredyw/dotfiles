@@ -3,7 +3,7 @@ alias cp="cp -i"
 alias mv="mv -i"
 alias vi="vim"
 alias sbash="source $HOME/.bashrc"
-alias vbash="source $HOME/.mybashrc.sh"
+alias vbash="vim $HOME/.mybashrc.sh"
 
 export VISUAL=vim
 export EDITOR=vim
