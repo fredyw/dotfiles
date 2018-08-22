@@ -10,6 +10,7 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter'
 
 set tabstop=4
 set shiftwidth=4
