@@ -34,6 +34,8 @@ set guifont=Consolas\ 12
 " set mouse=a
 set pastetoggle=<F2>
 
+map <C-n> :NERDTreeToggle<CR>
+
 au BufNewFile,BufRead *.gradle set filetype=groovy
 
 call vundle#end()
