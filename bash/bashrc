@@ -1,5 +1,7 @@
 [[ -z "$TMUX" ]] && exec tmux
 
+shopt -s direxpand
+
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
