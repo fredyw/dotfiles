@@ -32,6 +32,7 @@ set cursorline
 set completeopt=longest,preview,menuone
 set guifont=Consolas\ 12
 " set mouse=a
+set pastetoggle=<F2>
 
 au BufNewFile,BufRead *.gradle set filetype=groovy
 
