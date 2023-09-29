@@ -85,14 +85,44 @@ function postgres {
     docker run -it --rm --link postgres-test:postgres postgres psql -h postgres -U postgres
 }
 
-function update_fzf {
-    cd $HOME/.fzf && git pull && ./install --all && cd -
-}
-
 #======================================================================
 # Docker related functions
 #======================================================================
 function docker_prune {
     yes | docker container prune
     yes | docker image prune
+}
+
+#======================================================================
+# Update related functions
+#======================================================================
+function update_bazel {
+  BAZEL_DIR="${HOME}"/bazel
+  mkdir -p "${BAZEL_DIR}"
+
+  BAZELISK_URL=$(curl -s https://api.github.com/repos/bazelbuild/bazelisk/releases/latest | jq -r '.assets[] | select(.browser_download_url | contains("linux-amd64")) | .browser_download_url')
+  curl -L "${BAZELISK_URL}" --output "${BAZEL_DIR}"/bazel
+  chmod +x "${BAZEL_DIR}"/bazel
+
+  BUILDIFIER_URL=$(curl -s https://api.github.com/repos/bazelbuild/buildtools/releases/latest | jq -r '.assets[] | select(.browser_download_url | contains("buildifier-linux-amd64")) | .browser_download_url')
+  curl -L "${BUILDIFIER_URL}" --output "${BAZEL_DIR}"/buildifier
+  chmod +x "${BAZEL_DIR}"/buildifier
+
+  BUILDOZER_URL=$(curl -s https://api.github.com/repos/bazelbuild/buildtools/releases/latest | jq -r '.assets[] | select(.browser_download_url | contains("buildozer-linux-amd64")) | .browser_download_url')
+  curl -L "${BUILDOZER_URL}" --output "${BAZEL_DIR}"/buildozer
+  chmod +x "${BAZEL_DIR}"/buildozer
+}
+
+function update_fzf {
+    cd $HOME/.fzf && git pull && ./install --all && cd -
+}
+
+function update_jetbrains_toolbox {
+  URL=$(curl -s 'https://data.services.jetbrains.com//products/releases?code=TBA&latest=true&type=release' | jq -r '.TBA[0].downloads.linux.link')
+  DOWNLOAD_TEMP_DIR=$(mktemp -d)
+  mkdir -p "${DOWNLOAD_TEMP_DIR}"
+  curl -L "${URL}" --output "${DOWNLOAD_TEMP_DIR}/toolbox.tar.gz"
+  TOOLBOX_DIR="${HOME}"/jetbrains-toolbox
+  mkdir -p "${TOOLBOX_DIR}"
+  tar -C "${TOOLBOX_DIR}" -xf "${DOWNLOAD_TEMP_DIR}/toolbox.tar.gz" --strip-components=1
 }
