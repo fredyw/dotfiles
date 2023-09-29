@@ -33,3 +33,15 @@ function git_sync_fork {
         git push origin "${BRANCH}" && \
         git checkout -
 }
+
+function postgres_start {
+    docker run --rm --name postgres-test -e POSTGRES_PASSWORD=password -d postgres
+}
+ 
+function postgres_stop {
+    docker stop postgres-test
+}
+ 
+function postgres {
+    docker run -it --rm --link postgres-test:postgres postgres psql -h postgres -U postgres
+}
