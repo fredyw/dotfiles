@@ -22,6 +22,7 @@ export GOPATH="$HOME/gopath"
 export BAZEL="$HOME/bazel"
 export EXERCISM="$HOME/exercism"
 export PATH="$GOROOT/bin:$GOPATH/bin:$BAZEL:$EXERCISM:$PATH"
+export PROJECTS=$HOME/projects
 
 #======================================================================
 # Scripts
@@ -46,8 +47,8 @@ alias cdgithub="cd $GITHUB"
 alias cddotfiles="cd $GITHUB/dotfiles"
 alias cdleetcode="cd $GITHUB/leetcode"
 alias cdexercism="cd $GITHUB/exercism"
-alias cdintellij="cd $HOME/projects/intellij"
-alias cdclion="cd $HOME/projects/clion"
+alias cdintellij="cd $PROJECTS/intellij"
+alias cdclion="cd $PROJECTS/clion"
 
 #======================================================================
 # Git related functions
