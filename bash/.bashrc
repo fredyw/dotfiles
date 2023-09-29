@@ -97,14 +97,15 @@ function docker_prune {
 # Update related functions
 #======================================================================
 function update_go {
-  if [[ -f /home/go ]]; then
-    rm -rf /home/go
+  if [[ -d "${GOROOT}" ]]; then
+    rm -rf "${GOROOT}"
   fi
   GO_VERSION=$(curl -s https://go.dev/dl/?mode=json | jq -r '.[0].version')
   DOWNLOAD_TEMP_DIR=$(mktemp -d)
   mkdir -p "${DOWNLOAD_TEMP_DIR}"
   curl -L https://go.dev/dl/${GO_VERSION}.linux-amd64.tar.gz --output "${DOWNLOAD_TEMP_DIR}"/go.tar.gz
-  tar -C "${HOME}" -xf "${DOWNLOAD_TEMP_DIR}"/go.tar.gz
+  mkdir -p "${GOROOT}"
+  tar -C "${GOROOT}" -xf "${DOWNLOAD_TEMP_DIR}"/go.tar.gz --strip-components=1
 }
 
 function update_bazel {
