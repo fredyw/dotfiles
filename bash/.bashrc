@@ -88,3 +88,11 @@ function postgres {
 function update_fzf {
     cd $HOME/.fzf && git pull && ./install --all && cd -
 }
+
+#======================================================================
+# Docker related functions
+#======================================================================
+function docker_prune {
+    docker container prune
+    docker image prune
+}
