@@ -86,5 +86,5 @@ function postgres {
 }
 
 function update_fzf {
-    cd $HOME/.fzf && git pull && ./install && cd -
+    cd $HOME/.fzf && git pull && ./install --all && cd -
 }
