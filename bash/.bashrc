@@ -21,7 +21,7 @@ export GOROOT="$HOME/go"
 export GOPATH="$HOME/gopath"
 export BAZEL="$HOME/bazel"
 export EXERCISM="$HOME/exercism"
-export PATH="$GOROOT/bin:$GOPATH/bin:$BAZEL:$EXERCISM:$PATH"
+export PATH="$HOME/.local/bin:$GOROOT/bin:$GOPATH/bin:$BAZEL:$EXERCISM:$PATH"
 export PROJECTS=$HOME/projects
 
 #======================================================================
