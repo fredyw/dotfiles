@@ -2,6 +2,9 @@
 
 shopt -s direxpand
 
+#======================================================================
+# Aliases
+#======================================================================
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
@@ -10,10 +13,11 @@ alias rgf="rg --files | rg"
 alias sbash="source $HOME/.bashrc"
 alias vbash="vim $HOME/.bashrc"
 
+#======================================================================
+# Export variables
+#======================================================================
 export VISUAL=vim
 export EDITOR=vim
-
-export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w $(__git_ps1 "(%s)")\$\[\033[00m\] '
 export GIT_PS1_SHOWDIRTYSTATE=yes
 export GIT_PS1_SHOWSTASHSTATE=yes
 export GIT_PS1_SHOWUNTRACKEDFILES=yes
@@ -21,7 +25,11 @@ export GIT_PS1_SHOWCONFLICTSTATE=yes
 export GIT_PS1_SHOWUPSTREAM=auto
 export GIT_PS1_STATESEPARATOR="|"
 export GIT_PS1_SHOWCOLORHINTS=yes
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w $(__git_ps1 "(%s)")\$\[\033[00m\] '
 
+#======================================================================
+# Git related functions
+#======================================================================
 function git_sync_fork {
     BRANCH=main
     if [[ $# -ne 0 ]]; then
@@ -34,6 +42,9 @@ function git_sync_fork {
         git checkout -
 }
 
+#======================================================================
+# PostgreSQL related functions
+#======================================================================
 function postgres_start {
     docker run --rm --name postgres-test -e POSTGRES_PASSWORD=password -d postgres
 }
