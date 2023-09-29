@@ -27,7 +27,7 @@ export PROJECTS=$HOME/projects
 #======================================================================
 # Scripts
 #======================================================================
-if [[ -f $EXERCISM/shell/exercism_completion.bash ]]; then
+if [[ -f $GITHUB/dotfiles/bash/git-prompt.sh ]]; then
     source $GITHUB/dotfiles/bash/git-prompt.sh
 fi
 if [[ -f $EXERCISM/shell/exercism_completion.bash ]]; then
