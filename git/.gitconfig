@@ -1,0 +1,10 @@
+[user]
+	name = Fredy Wijaya
+	email = fredy.wijaya@gmail.com
+[alias]
+	tree = log --decorate --graph
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
