@@ -84,3 +84,7 @@ function postgres_stop {
 function postgres {
     docker run -it --rm --link postgres-test:postgres postgres psql -h postgres -U postgres
 }
+
+function update_fzf {
+    cd $HOME/.fzf && git pull && ./install && cd -
+}
