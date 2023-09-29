@@ -93,6 +93,6 @@ function update_fzf {
 # Docker related functions
 #======================================================================
 function docker_prune {
-    docker container prune
-    docker image prune
+    yes | docker container prune
+    yes | docker image prune
 }
