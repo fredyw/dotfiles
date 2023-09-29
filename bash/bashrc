@@ -18,7 +18,7 @@ export GIT_PS1_SHOWSTASHSTATE=yes
 export GIT_PS1_SHOWUNTRACKEDFILES=yes
 export GIT_PS1_SHOWCONFLICTSTATE=yes
 export GIT_PS1_SHOWUPSTREAM=auto
-export GIT_PS1_STATESEPARATOR=""
+export GIT_PS1_STATESEPARATOR="|"
 
 function git_sync_fork {
     BRANCH=main
