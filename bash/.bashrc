@@ -59,82 +59,82 @@ alias cdclion="cd $PROJECTS/clion"
 # Git related functions
 #======================================================================
 function git_sync_fork {
-  BRANCH=main
-  if [[ $# -ne 0 ]]; then
-      BRANCH=$1
-  fi
-  git fetch upstream && \
-      git checkout "${BRANCH}" && \
-      git pull upstream "${BRANCH}" && \
-      git push origin "${BRANCH}" && \
-      git checkout -
+    BRANCH=main
+    if [[ $# -ne 0 ]]; then
+        BRANCH=$1
+    fi
+    git fetch upstream && \
+        git checkout "${BRANCH}" && \
+        git pull upstream "${BRANCH}" && \
+        git push origin "${BRANCH}" && \
+        git checkout -
 }
 
 #======================================================================
 # PostgreSQL related functions
 #======================================================================
 function postgres_start {
-  docker run --rm --name postgres-test -e POSTGRES_PASSWORD=password -d postgres
+    docker run --rm --name postgres-test -e POSTGRES_PASSWORD=password -d postgres
 }
  
 function postgres_stop {
-  docker stop postgres-test
+    docker stop postgres-test
 }
  
 function postgres {
-  docker run -it --rm --link postgres-test:postgres postgres psql -h postgres -U postgres
+    docker run -it --rm --link postgres-test:postgres postgres psql -h postgres -U postgres
 }
 
 #======================================================================
 # Docker related functions
 #======================================================================
 function docker_prune {
-  yes | docker container prune
-  yes | docker image prune
+    yes | docker container prune
+    yes | docker image prune
 }
 
 #======================================================================
 # Update related functions
 #======================================================================
 function update_go {
-  if [[ -d "${GOROOT}" ]]; then
-    rm -rf "${GOROOT}"
-  fi
-  GO_VERSION=$(curl -s https://go.dev/dl/?mode=json | jq -r '.[0].version')
-  DOWNLOAD_TEMP_DIR=$(mktemp -d)
-  mkdir -p "${DOWNLOAD_TEMP_DIR}"
-  curl -L https://go.dev/dl/${GO_VERSION}.linux-amd64.tar.gz --output "${DOWNLOAD_TEMP_DIR}"/go.tar.gz
-  mkdir -p "${GOROOT}"
-  tar -C "${GOROOT}" -xf "${DOWNLOAD_TEMP_DIR}"/go.tar.gz --strip-components=1
+    if [[ -d "${GOROOT}" ]]; then
+        rm -rf "${GOROOT}"
+    fi
+    GO_VERSION=$(curl -s https://go.dev/dl/?mode=json | jq -r '.[0].version')
+    DOWNLOAD_TEMP_DIR=$(mktemp -d)
+    mkdir -p "${DOWNLOAD_TEMP_DIR}"
+    curl -L https://go.dev/dl/${GO_VERSION}.linux-amd64.tar.gz --output "${DOWNLOAD_TEMP_DIR}"/go.tar.gz
+    mkdir -p "${GOROOT}"
+    tar -C "${GOROOT}" -xf "${DOWNLOAD_TEMP_DIR}"/go.tar.gz --strip-components=1
 }
 
 function update_bazel {
-  BAZEL_DIR="${HOME}"/bazel
-  mkdir -p "${BAZEL_DIR}"
+    BAZEL_DIR="${HOME}"/bazel
+    mkdir -p "${BAZEL_DIR}"
 
-  BAZELISK_URL=$(curl -s https://api.github.com/repos/bazelbuild/bazelisk/releases/latest | jq -r '.assets[] | select(.browser_download_url | contains("linux-amd64")) | .browser_download_url')
-  curl -L "${BAZELISK_URL}" --output "${BAZEL_DIR}"/bazel
-  chmod +x "${BAZEL_DIR}"/bazel
+    BAZELISK_URL=$(curl -s https://api.github.com/repos/bazelbuild/bazelisk/releases/latest | jq -r '.assets[] | select(.browser_download_url | contains("linux-amd64")) | .browser_download_url')
+    curl -L "${BAZELISK_URL}" --output "${BAZEL_DIR}"/bazel
+    chmod +x "${BAZEL_DIR}"/bazel
 
-  BUILDIFIER_URL=$(curl -s https://api.github.com/repos/bazelbuild/buildtools/releases/latest | jq -r '.assets[] | select(.browser_download_url | contains("buildifier-linux-amd64")) | .browser_download_url')
-  curl -L "${BUILDIFIER_URL}" --output "${BAZEL_DIR}"/buildifier
-  chmod +x "${BAZEL_DIR}"/buildifier
+    BUILDIFIER_URL=$(curl -s https://api.github.com/repos/bazelbuild/buildtools/releases/latest | jq -r '.assets[] | select(.browser_download_url | contains("buildifier-linux-amd64")) | .browser_download_url')
+    curl -L "${BUILDIFIER_URL}" --output "${BAZEL_DIR}"/buildifier
+    chmod +x "${BAZEL_DIR}"/buildifier
 
-  BUILDOZER_URL=$(curl -s https://api.github.com/repos/bazelbuild/buildtools/releases/latest | jq -r '.assets[] | select(.browser_download_url | contains("buildozer-linux-amd64")) | .browser_download_url')
-  curl -L "${BUILDOZER_URL}" --output "${BAZEL_DIR}"/buildozer
-  chmod +x "${BAZEL_DIR}"/buildozer
+    BUILDOZER_URL=$(curl -s https://api.github.com/repos/bazelbuild/buildtools/releases/latest | jq -r '.assets[] | select(.browser_download_url | contains("buildozer-linux-amd64")) | .browser_download_url')
+    curl -L "${BUILDOZER_URL}" --output "${BAZEL_DIR}"/buildozer
+    chmod +x "${BAZEL_DIR}"/buildozer
 }
 
 function update_fzf {
-  cd $HOME/.fzf && git pull && ./install --all && cd -
+    cd $HOME/.fzf && git pull && ./install --all && cd -
 }
 
 function update_jetbrains_toolbox {
-  URL=$(curl -s 'https://data.services.jetbrains.com//products/releases?code=TBA&latest=true&type=release' | jq -r '.TBA[0].downloads.linux.link')
-  DOWNLOAD_TEMP_DIR=$(mktemp -d)
-  mkdir -p "${DOWNLOAD_TEMP_DIR}"
-  curl -L "${URL}" --output "${DOWNLOAD_TEMP_DIR}/jetbrains-toolbox.tar.gz"
-  TOOLBOX_DIR="${HOME}"/jetbrains-toolbox
-  mkdir -p "${TOOLBOX_DIR}"
-  tar -C "${TOOLBOX_DIR}" -xf "${DOWNLOAD_TEMP_DIR}/jetbrains-toolbox.tar.gz" --strip-components=1
+    URL=$(curl -s 'https://data.services.jetbrains.com//products/releases?code=TBA&latest=true&type=release' | jq -r '.TBA[0].downloads.linux.link')
+    DOWNLOAD_TEMP_DIR=$(mktemp -d)
+    mkdir -p "${DOWNLOAD_TEMP_DIR}"
+    curl -L "${URL}" --output "${DOWNLOAD_TEMP_DIR}/jetbrains-toolbox.tar.gz"
+    TOOLBOX_DIR="${HOME}"/jetbrains-toolbox
+    mkdir -p "${TOOLBOX_DIR}"
+    tar -C "${TOOLBOX_DIR}" -xf "${DOWNLOAD_TEMP_DIR}/jetbrains-toolbox.tar.gz" --strip-components=1
 }
