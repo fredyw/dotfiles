@@ -47,6 +47,7 @@ alias cdgithub="cd $GITHUB"
 alias cddotfiles="cd $GITHUB/dotfiles"
 alias cdleetcode="cd $GITHUB/leetcode"
 alias cdexercism="cd $GITHUB/exercism"
+alias cdprojects="cd $PROJECTS"
 alias cdintellij="cd $PROJECTS/intellij"
 alias cdclion="cd $PROJECTS/clion"
 
