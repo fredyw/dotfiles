@@ -12,6 +12,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-dispatch'
 
+set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
 set expandtab
