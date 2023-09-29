@@ -31,8 +31,9 @@ alias vbash="vim $HOME/.bashrc"
 alias cdtmp="cd $HOME/tmp"
 alias cddownloads="cd $HOME/Downloads"
 alias cdgithub="cd $GITHUB"
-alias cdleetcode="cd $GITHUB/leetcode"
 alias cddotfiles="cd $GITHUB/dotfiles"
+alias cdleetcode="cd $GITHUB/leetcode"
+alias cdexercism="cd $GITHUB/exercism"
 
 #======================================================================
 # Git related functions
