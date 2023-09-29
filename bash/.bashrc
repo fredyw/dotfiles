@@ -27,8 +27,12 @@ export PROJECTS=$HOME/projects
 #======================================================================
 # Scripts
 #======================================================================
-source $GITHUB/dotfiles/bash/git-prompt.sh
-source $EXERCISM/shell/exercism_completion.bash
+if [[ -f $EXERCISM/shell/exercism_completion.bash ]]; then
+    source $GITHUB/dotfiles/bash/git-prompt.sh
+fi
+if [[ -f $EXERCISM/shell/exercism_completion.bash ]]; then
+    source $EXERCISM/shell/exercism_completion.bash
+fi
 
 #======================================================================
 # Aliases
