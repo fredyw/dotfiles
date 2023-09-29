@@ -3,17 +3,6 @@
 shopt -s direxpand
 
 #======================================================================
-# Aliases
-#======================================================================
-alias rm="rm -i"
-alias cp="cp -i"
-alias mv="mv -i"
-alias vi="vim"
-alias rgf="rg --files | rg"
-alias sbash="source $HOME/.bashrc"
-alias vbash="vim $HOME/.bashrc"
-
-#======================================================================
 # Export variables
 #======================================================================
 export VISUAL=vim
@@ -26,6 +15,24 @@ export GIT_PS1_SHOWUPSTREAM=auto
 export GIT_PS1_STATESEPARATOR="|"
 export GIT_PS1_SHOWCOLORHINTS=yes
 export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w $(__git_ps1 "(%s)")\$\[\033[00m\] '
+export GITHUB=$HOME/github
+
+#======================================================================
+# Aliases
+#======================================================================
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
+alias vi="vim"
+alias rgf="rg --files | rg"
+alias tks="tmux kill-session -a"
+alias sbash="source $HOME/.bashrc"
+alias vbash="vim $HOME/.bashrc"
+alias cdtmp="cd $HOME/tmp"
+alias cddownloads="cd $HOME/Downloads"
+alias cdgithub="cd $GITHUB"
+alias cdleetcode="cd $GITHUB/leetcode"
+alias cddotfiles="cd $GITHUB/dotfiles"
 
 #======================================================================
 # Git related functions
