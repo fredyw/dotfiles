@@ -28,10 +28,10 @@ export PROJECTS=$HOME/projects
 # Scripts
 #======================================================================
 if [[ -f $GITHUB/dotfiles/bash/git-prompt.sh ]]; then
-    source $GITHUB/dotfiles/bash/git-prompt.sh
+  source $GITHUB/dotfiles/bash/git-prompt.sh
 fi
 if [[ -f $EXERCISM/shell/exercism_completion.bash ]]; then
-    source $EXERCISM/shell/exercism_completion.bash
+  source $EXERCISM/shell/exercism_completion.bash
 fi
 
 #======================================================================
@@ -59,43 +59,54 @@ alias cdclion="cd $PROJECTS/clion"
 # Git related functions
 #======================================================================
 function git_sync_fork {
-    BRANCH=main
-    if [[ $# -ne 0 ]]; then
-        BRANCH=$1
-    fi
-    git fetch upstream && \
-        git checkout "${BRANCH}" && \
-        git pull upstream "${BRANCH}" && \
-        git push origin "${BRANCH}" && \
-        git checkout -
+  BRANCH=main
+  if [[ $# -ne 0 ]]; then
+      BRANCH=$1
+  fi
+  git fetch upstream && \
+      git checkout "${BRANCH}" && \
+      git pull upstream "${BRANCH}" && \
+      git push origin "${BRANCH}" && \
+      git checkout -
 }
 
 #======================================================================
 # PostgreSQL related functions
 #======================================================================
 function postgres_start {
-    docker run --rm --name postgres-test -e POSTGRES_PASSWORD=password -d postgres
+  docker run --rm --name postgres-test -e POSTGRES_PASSWORD=password -d postgres
 }
  
 function postgres_stop {
-    docker stop postgres-test
+  docker stop postgres-test
 }
  
 function postgres {
-    docker run -it --rm --link postgres-test:postgres postgres psql -h postgres -U postgres
+  docker run -it --rm --link postgres-test:postgres postgres psql -h postgres -U postgres
 }
 
 #======================================================================
 # Docker related functions
 #======================================================================
 function docker_prune {
-    yes | docker container prune
-    yes | docker image prune
+  yes | docker container prune
+  yes | docker image prune
 }
 
 #======================================================================
 # Update related functions
 #======================================================================
+function update_go {
+  if [[ -f /home/go ]]; then
+    rm -rf /home/go
+  fi
+  GO_VERSION=$(curl -s https://go.dev/dl/?mode=json | jq -r '.[0].version')
+  DOWNLOAD_TEMP_DIR=$(mktemp -d)
+  mkdir -p "${DOWNLOAD_TEMP_DIR}"
+  curl -L https://go.dev/dl/${GO_VERSION}.linux-amd64.tar.gz --output "${DOWNLOAD_TEMP_DIR}"/go.tar.gz
+  tar -C "${HOME}" -xf "${DOWNLOAD_TEMP_DIR}"/go.tar.gz
+}
+
 function update_bazel {
   BAZEL_DIR="${HOME}"/bazel
   mkdir -p "${BAZEL_DIR}"
@@ -114,7 +125,7 @@ function update_bazel {
 }
 
 function update_fzf {
-    cd $HOME/.fzf && git pull && ./install --all && cd -
+  cd $HOME/.fzf && git pull && ./install --all && cd -
 }
 
 function update_jetbrains_toolbox {
