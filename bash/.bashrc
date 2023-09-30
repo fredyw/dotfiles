@@ -75,11 +75,11 @@ function git_sync_fork {
 # fzf related functions
 #======================================================================
 function fvi {
-    vim $(fzf)
+    vim $(fzf -m)
 }
 
 function fcode {
-    code $(fzf)
+    code $(fzf -m)
 }
 
 #======================================================================
