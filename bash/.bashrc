@@ -89,8 +89,8 @@ function postgres {
 # Docker related functions
 #======================================================================
 function docker_prune {
-    yes | docker container prune
-    yes | docker image prune
+    docker container prune -f
+    docker image prune -f
 }
 
 #======================================================================
