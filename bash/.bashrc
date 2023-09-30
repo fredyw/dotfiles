@@ -138,3 +138,11 @@ function update_jetbrains_toolbox {
     mkdir -p "${TOOLBOX_DIR}"
     tar -C "${TOOLBOX_DIR}" -xf "${DOWNLOAD_TEMP_DIR}/jetbrains-toolbox.tar.gz" --strip-components=1
 }
+
+function update_vundle {
+    git clone https://github.com/VundleVim/Vundle.vim.git "${HOME}"/.vim/bundle/Vundle.vim
+    vim +PluginUpdate +qall
+
+    # Install YouCompleteMe.
+    "${HOME}"/.vim/bundle/YouCompleteMe/install.py
+}
