@@ -141,7 +141,7 @@ function update_jetbrains_toolbox {
 
 function update_vundle {
     vim +PluginUpdate +qall
-
-    # Install YouCompleteMe.
-    "${HOME}"/.vim/bundle/YouCompleteMe/install.py
+    if [[ -d "${HOME}"/.vim/bundle/YouCompleteMe ]]; then
+        "${HOME}"/.vim/bundle/YouCompleteMe/install.py
+    fi
 }
