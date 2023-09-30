@@ -145,3 +145,13 @@ function update_vundle {
         "${HOME}"/.vim/bundle/YouCompleteMe/install.py
     fi
 }
+
+function update_all {
+    rustup update
+    sdk update && sdk upgrade
+    update_vundle
+    update_fzf
+    update_go
+    update_bazel
+    update_jetbrains_toolbox
+}
