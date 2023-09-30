@@ -7,6 +7,7 @@ shopt -s direxpand
 #======================================================================
 export VISUAL=vim
 export EDITOR=vim
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export GIT_PS1_SHOWDIRTYSTATE=yes
 export GIT_PS1_SHOWSTASHSTATE=yes
 export GIT_PS1_SHOWUNTRACKEDFILES=yes
@@ -41,8 +42,6 @@ alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
 alias vi="vim"
-alias fvi="vim $(fzf)"
-alias fcode="code $(fzf)"
 alias rgf="rg --files | rg"
 alias tks="tmux kill-session -a"
 alias sbash="source $HOME/.bashrc"
@@ -70,6 +69,17 @@ function git_sync_fork {
         git pull upstream "${BRANCH}" && \
         git push origin "${BRANCH}" && \
         git checkout -
+}
+
+#======================================================================
+# fzf related functions
+#======================================================================
+function fvi {
+    vim $(fzf)
+}
+
+function fcode {
+    code $(fzf)
 }
 
 #======================================================================
