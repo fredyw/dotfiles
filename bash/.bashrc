@@ -140,7 +140,6 @@ function update_jetbrains_toolbox {
 }
 
 function update_vundle {
-    git clone https://github.com/VundleVim/Vundle.vim.git "${HOME}"/.vim/bundle/Vundle.vim
     vim +PluginUpdate +qall
 
     # Install YouCompleteMe.
