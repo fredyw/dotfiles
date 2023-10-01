@@ -90,6 +90,10 @@ function fpcode {
     code "$(fzf -m --preview='head -$LINES {}')"
 }
 
+function fdcode {
+    code $(find -type d | fzf -m)
+}
+
 function fkill() {
     local pid
     if [[ "$UID" != "0" ]]; then
