@@ -6,10 +6,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ycm-core/YouCompleteMe'
-Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/nerdtree'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-dispatch'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 
