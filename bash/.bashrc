@@ -76,7 +76,9 @@ function git_sync_fork {
 # fzf related functions
 #======================================================================
 function fvi {
-    vim "$(fzf -m)"
+    vim "$(fzf -m \
+        --bind='ctrl-h:reload(fd --hidden)' \
+        --bind='ctrl-n:reload(fd)')"
 }
 
 function fcode {
