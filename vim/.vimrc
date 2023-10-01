@@ -8,9 +8,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/nerdtree'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-dispatch'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 set encoding=utf-8
 set tabstop=4
@@ -35,6 +36,8 @@ set guifont=Consolas\ 12
 set pastetoggle=<F2>
 
 map <C-n> :NERDTreeToggle<CR>
+map <C-p> :Files<CR>
+map <C-e> :Buffers<CR>
 
 au BufNewFile,BufRead *.gradle set filetype=groovy
 
