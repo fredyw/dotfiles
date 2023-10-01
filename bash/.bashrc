@@ -84,11 +84,11 @@ function fcode {
 }
 
 function fpvi {
-    vim "$(fzf -m --preview='head -$LINES {}')"
+    vim "$(fzf -m --preview='bat --color=always --style=numbers --line-range=:500 {}')"
 }
 
 function fpcode {
-    code "$(fzf -m --preview='head -$LINES {}')"
+    code "$(fzf -m --preview='bat --color=always --style=numbers --line-range=:500 {}')"
 }
 
 function fdcode {
