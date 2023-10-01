@@ -78,7 +78,8 @@ function git_sync_fork {
 function fvi {
     vim "$(fzf -m \
         --bind='ctrl-h:reload(fd --hidden)' \
-        --bind='ctrl-n:reload(fd)')"
+        --bind='ctrl-n:reload(fd)' \
+        --bind='ctrl-p:preview(bat --color=always --style=numbers --line-range=:500 {})')"
 }
 
 function fcode {
@@ -86,15 +87,8 @@ function fcode {
         --bind='ctrl-d:reload(fd --type d)' \
         --bind='ctrl-f:reload(fd --type f)' \
         --bind='ctrl-h:reload(fd --hidden)' \
-        --bind='ctrl-n:reload(fd)')"
-}
-
-function fpvi {
-    vim "$(fzf -m --preview='bat --color=always --style=numbers --line-range=:500 {}')"
-}
-
-function fpcode {
-    code "$(fzf -m --preview='bat --color=always --style=numbers --line-range=:500 {}')"
+        --bind='ctrl-n:reload(fd)' \
+        --bind='ctrl-p:preview(bat --color=always --style=numbers --line-range=:500 {})')"
 }
 
 function fkill() {
