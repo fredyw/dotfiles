@@ -7,7 +7,6 @@ shopt -s direxpand
 #======================================================================
 export VISUAL=vim
 export EDITOR=vim
-export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export GIT_PS1_SHOWDIRTYSTATE=yes
 export GIT_PS1_SHOWSTASHSTATE=yes
 export GIT_PS1_SHOWUNTRACKEDFILES=yes
@@ -91,7 +90,7 @@ function fpcode {
 }
 
 function fdcode {
-    code $(find -type d | fzf -m)
+    code $(fd --type d | fzf -m)
 }
 
 function fkill() {
