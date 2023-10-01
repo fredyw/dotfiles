@@ -77,18 +77,20 @@ function git_sync_fork {
 #======================================================================
 function fvi {
     vim "$(fzf -m \
-        --bind='ctrl-h:reload(fd --hidden)' \
+        --bind='ctrl-h:reload(fd --hidden --exclude ".git")' \
         --bind='ctrl-n:reload(fd)' \
-        --bind='ctrl-p:preview(bat --color=always --style=numbers --line-range=:500 {})')"
+        --bind='ctrl-p:preview(bat --color=always --style=numbers --line-range=:500 {})' \
+        --header='Ctrl-H: Hidden | Ctrl-N: Normal | Ctrl-P: Preview')"
 }
 
 function fcode {
     code "$(fzf -m \
         --bind='ctrl-d:reload(fd --type d)' \
         --bind='ctrl-f:reload(fd --type f)' \
-        --bind='ctrl-h:reload(fd --hidden)' \
+        --bind='ctrl-h:reload(fd --hidden --exclude ".git")' \
         --bind='ctrl-n:reload(fd)' \
-        --bind='ctrl-p:preview(bat --color=always --style=numbers --line-range=:500 {})')"
+        --bind='ctrl-p:preview(bat --color=always --style=numbers --line-range=:500 {})' \
+        --header='Ctrl-D: Directories | Ctrl-F: Files | Ctrl-H: Hidden | Ctrl-N: Normal | Ctrl-P: Preview')"
 }
 
 function fkill() {
