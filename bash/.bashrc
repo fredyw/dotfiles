@@ -76,21 +76,22 @@ function git_sync_fork {
 # fzf related functions
 #======================================================================
 function fvi {
-    vim "$(fzf -m \
+    vim $(fzf -m \
         --bind='ctrl-h:reload(fd --hidden --exclude ".git")' \
         --bind='ctrl-n:reload(fd)' \
         --bind='ctrl-p:preview(bat --color=always --style=numbers --line-range=:500 {})' \
-        --header='Ctrl-H: Hidden | Ctrl-N: Normal | Ctrl-P: Preview')"
+        --header='Ctrl-H: Show hidden | Ctrl-R: Reset | Ctrl-P: Preview')
 }
 
 function fcode {
-    code "$(fzf -m \
+    code $(fzf -m \
         --bind='ctrl-d:reload(fd --type d)' \
         --bind='ctrl-f:reload(fd --type f)' \
         --bind='ctrl-h:reload(fd --hidden --exclude ".git")' \
         --bind='ctrl-n:reload(fd)' \
         --bind='ctrl-p:preview(bat --color=always --style=numbers --line-range=:500 {})' \
-        --header='Ctrl-D: Directories | Ctrl-F: Files | Ctrl-H: Hidden | Ctrl-N: Normal | Ctrl-P: Preview')"
+        --bind='ctrl-e:execute(dirname {})' \
+        --header='Ctrl-D: Show directories | Ctrl-F: Show files | Ctrl-H: Show hidden | Ctrl-R: Reset | Ctrl-P: Preview | Ctrl-E: Open directory')
 }
 
 function fkill() {
