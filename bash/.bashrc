@@ -80,7 +80,7 @@ function fvi {
 }
 
 function fcode {
-    code "$(fzf -m)"
+    code $(fzf -m --bind='ctrl-d:execute:dirname {}')
 }
 
 function fpvi {
