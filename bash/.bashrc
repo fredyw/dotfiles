@@ -80,7 +80,11 @@ function fvi {
 }
 
 function fcode {
-    code $(fzf -m --bind='ctrl-d:execute:dirname {}')
+    code "$(fzf -m \
+        --bind='ctrl-d:reload(fd --type d)' \
+        --bind='ctrl-f:reload(fd --type f)' \
+        --bind='ctrl-h:reload(fd --hidden)' \
+        --bind='ctrl-n:reload(fd)')"
 }
 
 function fpvi {
@@ -89,10 +93,6 @@ function fpvi {
 
 function fpcode {
     code "$(fzf -m --preview='bat --color=always --style=numbers --line-range=:500 {}')"
-}
-
-function fdcode {
-    code $(fd --type d | fzf -m)
 }
 
 function fkill() {
