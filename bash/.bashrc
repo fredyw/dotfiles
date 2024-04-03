@@ -192,3 +192,14 @@ function update_all {
     update_bazel
     update_jetbrains_toolbox
 }
+
+#======================================================================
+# Bazel related functions
+#======================================================================
+function bazel_enable_test_output_streamed {
+    echo "test --test_output=streamed" >> ~/.bazelrc
+}
+
+function bazel_disable_test_output_streamed {
+    echo "# test --test_output=streamed" >> ~/.bazelrc
+}
