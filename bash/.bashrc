@@ -197,9 +197,9 @@ function update_all {
 # Bazel related functions
 #======================================================================
 function bazel_enable_test_output_streamed {
-    echo "test --test_output=streamed" >> ~/.bazelrc
+    echo "test --test_output=streamed" > ~/.bazelrc
 }
 
 function bazel_disable_test_output_streamed {
-    echo "# test --test_output=streamed" >> ~/.bazelrc
+    echo "# test --test_output=streamed" > ~/.bazelrc
 }
