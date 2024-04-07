@@ -203,3 +203,10 @@ function bazel_enable_test_output_streamed {
 function bazel_disable_test_output_streamed {
     echo "# test --test_output=streamed" > ~/.bazelrc
 }
+
+#======================================================================
+# Linux related functions
+#======================================================================
+function linux_update {
+    sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y
+}
