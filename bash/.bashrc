@@ -7,7 +7,6 @@ shopt -s direxpand
 #======================================================================
 export VISUAL=vim
 export EDITOR=vim
-export TERM=ansi
 export GIT_PS1_SHOWDIRTYSTATE=yes
 export GIT_PS1_SHOWSTASHSTATE=yes
 export GIT_PS1_SHOWUNTRACKEDFILES=yes
