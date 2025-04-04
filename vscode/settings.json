@@ -1,0 +1,14 @@
+{
+    "terminal.integrated.sendKeybindingsToShell": true,
+    "workbench.editor.enablePreview": false,
+    "files.autoSave": "afterDelay",
+    "window.title": "${dirty}${activeEditorLong}${separator}${rootName}${separator}${profileName}${separator}${appName}",
+    "workbench.startupEditor": "none",
+    "editor.rulers": [
+        80
+    ],
+    "diffEditor.codeLens": true,
+    "editor.minimap.enabled": false,
+    "workbench.tree.indent": 16,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+}
